@@ -5,6 +5,24 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Italic</string>
+        </mutableArray>
         <mutableArray key="PokemonFont.ttf">
             <string>PokemonSolidNormal</string>
         </mutableArray>
@@ -30,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PokeDex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqW-Ia-M4F">
-                                        <rect key="frame" x="206" y="12" width="188" height="30"/>
+                                        <rect key="frame" x="206" y="12.5" width="188" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="188" id="VaW-zK-LIW"/>
@@ -63,8 +81,13 @@
                                     <constraint firstItem="tqW-Ia-M4F" firstAttribute="centerY" secondItem="52n-qg-JVP" secondAttribute="centerY" id="pdT-1C-eSZ"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" placeholder="Find your favorite Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="71d-Qd-xiG">
+                                <rect key="frame" x="0.0" y="53" width="600" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rWo-aP-UEJ">
-                                <rect key="frame" x="28" y="73" width="544" height="454"/>
+                                <rect key="frame" x="28" y="97" width="544" height="454"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VXm-Y6-4VB">
@@ -81,8 +104,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="142" translatesAutoresizingMaskIntoConstraints="NO" id="flY-Rb-ge7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="97"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="142" translatesAutoresizingMaskIntoConstraints="NO" id="flY-Rb-ge7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="104"/>
                                                     <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycv-U9-zlI">
@@ -103,6 +126,7 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="0.7012134308510638" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="ycv-U9-zlI" firstAttribute="top" secondItem="flY-Rb-ge7" secondAttribute="bottom" id="0eM-Au-aja"/>
                                             <constraint firstAttribute="trailing" secondItem="flY-Rb-ge7" secondAttribute="trailing" id="CdI-YB-WyQ"/>
                                             <constraint firstAttribute="bottom" secondItem="flY-Rb-ge7" secondAttribute="bottom" id="Jl9-9b-cMl"/>
                                             <constraint firstItem="flY-Rb-ge7" firstAttribute="top" secondItem="Mqq-ng-xul" secondAttribute="top" id="ZH4-62-7xF"/>
@@ -111,6 +135,11 @@
                                             <constraint firstAttribute="bottom" secondItem="ycv-U9-zlI" secondAttribute="bottom" id="gfQ-HC-Ksq"/>
                                             <constraint firstItem="flY-Rb-ge7" firstAttribute="leading" secondItem="Mqq-ng-xul" secondAttribute="leading" id="vch-Mo-lec"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Jl9-9b-cMl"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="nameLbl" destination="ycv-U9-zlI" id="6d7-22-Yjy"/>
                                             <outlet property="thumbImg" destination="flY-Rb-ge7" id="NFB-yV-ucy"/>
@@ -118,46 +147,52 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" placeholder="Find your favorite Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="71d-Qd-xiG">
-                                <rect key="frame" x="0.0" y="37" width="600" height="44"/>
-                                <animations/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rWo-aP-UEJ" secondAttribute="bottom" constant="20" id="4o0-Az-75E"/>
                             <constraint firstItem="71d-Qd-xiG" firstAttribute="top" secondItem="52n-qg-JVP" secondAttribute="bottom" id="7Nk-yD-Ymd"/>
-                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="IKb-2D-edo"/>
+                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IKb-2D-edo"/>
                             <constraint firstAttribute="trailing" secondItem="t3e-Wa-LgK" secondAttribute="trailing" id="LDB-nS-hgs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rWo-aP-UEJ" secondAttribute="trailing" constant="20" id="N1c-TT-gGg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rWo-aP-UEJ" secondAttribute="trailing" id="N1c-TT-gGg"/>
+                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="top" secondItem="52n-qg-JVP" secondAttribute="bottom" constant="38" id="Ot3-yr-rce"/>
                             <constraint firstItem="t3e-Wa-LgK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="R7F-gt-mXL"/>
                             <constraint firstAttribute="trailing" secondItem="52n-qg-JVP" secondAttribute="trailing" id="RC4-hF-kCq"/>
+                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="top" secondItem="71d-Qd-xiG" secondAttribute="bottom" id="T0t-He-CYf"/>
                             <constraint firstItem="71d-Qd-xiG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vyv-Pj-FfI"/>
+                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="top" secondItem="52n-qg-JVP" secondAttribute="bottom" constant="19" id="WuR-7h-uD9"/>
                             <constraint firstAttribute="trailing" secondItem="71d-Qd-xiG" secondAttribute="trailing" id="Zae-CW-88J"/>
+                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="top" secondItem="71d-Qd-xiG" secondAttribute="bottom" constant="20" id="bSL-mO-8uT"/>
                             <constraint firstItem="t3e-Wa-LgK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="j24-kz-EVt"/>
                             <constraint firstItem="52n-qg-JVP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nEA-st-rx8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="t3e-Wa-LgK" secondAttribute="bottom" id="nNW-gL-9qr"/>
                             <constraint firstItem="52n-qg-JVP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="p0l-8t-gJq"/>
+                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="top" secondItem="52n-qg-JVP" secondAttribute="bottom" constant="38" id="pHw-il-DJj"/>
                             <constraint firstItem="t3e-Wa-LgK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="r7h-hU-Ha1"/>
                             <constraint firstItem="rWo-aP-UEJ" firstAttribute="top" secondItem="52n-qg-JVP" secondAttribute="bottom" constant="20" id="sVE-Qb-lUR"/>
+                            <constraint firstItem="rWo-aP-UEJ" firstAttribute="top" secondItem="52n-qg-JVP" secondAttribute="bottom" constant="19" id="vuF-i5-YbL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="j24-kz-EVt"/>
+                                <exclude reference="Ot3-yr-rce"/>
+                                <exclude reference="WuR-7h-uD9"/>
+                                <exclude reference="pHw-il-DJj"/>
+                                <exclude reference="sVE-Qb-lUR"/>
+                                <exclude reference="vuF-i5-YbL"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="collection" destination="rWo-aP-UEJ" id="d6V-SA-QZw"/>
                         <outlet property="searchBar" destination="71d-Qd-xiG" id="f1H-IC-kun"/>
-                        <segue destination="fGa-df-YSV" kind="show" identifier="PokemonDetailVC" id="ZCc-VN-xNo"/>
+                        <segue destination="fGa-df-YSV" kind="show" identifier="PokemonDetailVC" id="Mjp-Xv-aO1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="254"/>
+            <point key="canvasLocation" x="318" y="150"/>
         </scene>
         <!--Pokemon DetailVC-->
         <scene sceneID="acH-hY-dfS">
@@ -451,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ew2-bm-3uH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="163"/>
+            <point key="canvasLocation" x="1115" y="150"/>
         </scene>
     </scenes>
     <resources>

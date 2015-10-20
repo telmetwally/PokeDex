@@ -44,7 +44,6 @@ class PokemonDetailVC: UIViewController {
             // this code will run after download is done
             self.updateUI()
             
-            
         }
 
     }
@@ -85,5 +84,4 @@ class PokemonDetailVC: UIViewController {
         
     }
 
-  
-}
+  }
