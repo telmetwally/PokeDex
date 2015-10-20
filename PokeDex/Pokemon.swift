@@ -23,14 +23,12 @@ class Pokemon {
     private var _nextEvoLvl: String!
     private var _pokemonUrl: String!
     
-    
     var description: String {
         if _description == nil {
             _description = ""
         }
         return _description
     }
-    
     
     var type: String {
         if _type == nil {
@@ -40,14 +38,12 @@ class Pokemon {
         return _type
     }
     
-    
     var defense: String {
         if _defense == nil {
             _defense = ""
         }
         return _defense
     }
-    
     
     var height:String {
         if _height == nil {
@@ -56,7 +52,6 @@ class Pokemon {
         return _height
     }
     
-    
     var weight: String {
         if _weight == nil {
             _weight = ""
@@ -64,14 +59,12 @@ class Pokemon {
         return _weight
     }
     
-    
     var nextEvoId: String {
         if _nextEvoId == nil {
             _nextEvoId = ""
         }
         return _nextEvoId
     }
-    
     
     
     var attack: String {
@@ -88,7 +81,6 @@ class Pokemon {
     }
     
     
-    
     var nextEvoLvl: String {
         
         get {
@@ -100,11 +92,9 @@ class Pokemon {
         }
     }
     
-    
         var name: String {
         return _name
     }
-    
     
     
     var pokedexId: Int{
@@ -112,13 +102,11 @@ class Pokemon {
     }
     
     
-        
     init(name:String, pokedexId: Int){
         self._name = name
         self._pokeDexId = pokedexId
         
         _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self._pokeDexId)/"
-        
         
     }
     
@@ -183,23 +171,20 @@ class Pokemon {
                     if let url = descArr[0]["resource_uri"] {
                         let nsurl = NSURL(string: "\(URL_BASE)\(url)")!
                         Alamofire.request(.GET, nsurl).responseJSON { response in
+                            let desResult = response.result
                             
-                            if let descDic = result.value as? Dictionary<String, AnyObject> {
+                            if let descDic = desResult.value as? Dictionary<String, AnyObject> {
                                 
                                 if let description = descDic["description"] as? String {
                                     self._description = description
                                     print(self._description)
                                     
                                 }
-
-                                
                                 
                             }
                             
                             completed()
                         }
-                        
-                        
 
                     }
                     
